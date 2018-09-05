@@ -54,32 +54,6 @@
 			</div>
 			<script type="text/javascript">setTimeout(setShortcut, 2000);</script>
 		<!--{/if}-->
-		<div id="toptb" class="cl">
-			<!--{hook/global_cpnav_top}-->
-			<div class="wp">
-				<div class="z">
-					<!--{loop $_G['setting']['topnavs'][0] $nav}-->
-						<!--{if $nav['available'] && (!$nav['level'] || ($nav['level'] == 1 && $_G['uid']) || ($nav['level'] == 2 && $_G['adminid'] > 0) || ($nav['level'] == 3 && $_G['adminid'] == 1))}-->$nav[code]<!--{/if}-->
-					<!--{/loop}-->
-					<!--{hook/global_cpnav_extra1}-->
-				</div>
-				<div class="y">
-					<a id="switchblind" href="javascript:;" onclick="toggleBlind(this)" title="{lang switch_blind}" class="switchblind">{lang switch_blind}</a>
-					<!--{hook/global_cpnav_extra2}-->
-					<!--{loop $_G['setting']['topnavs'][1] $nav}-->
-						<!--{if $nav['available'] && (!$nav['level'] || ($nav['level'] == 1 && $_G['uid']) || ($nav['level'] == 2 && $_G['adminid'] > 0) || ($nav['level'] == 3 && $_G['adminid'] == 1))}-->$nav[code]<!--{/if}-->
-					<!--{/loop}-->
-					<!--{if empty($_G['disabledwidthauto']) && $_G['setting']['switchwidthauto']}-->
-						<a href="javascript:;" id="switchwidth" onclick="widthauto(this)" title="{if widthauto()}{lang switch_narrow}{else}{lang switch_wide}{/if}" class="switchwidth"><!--{if widthauto()}-->{lang switch_narrow}<!--{else}-->{lang switch_wide}<!--{/if}--></a>
-					<!--{/if}-->
-					<!--{if $_G['uid'] && !empty($_G['style']['extstyle'])}--><a id="sslct" href="javascript:;" onmouseover="delayShow(this, function() {showMenu({'ctrlid':'sslct','pos':'34!'})});">{lang changestyle}</a><!--{/if}-->
-					<!--{if check_diy_perm($topic)}-->
-						$diynav
-					<!--{/if}-->
-				</div>
-			</div>
-		</div>
-
 		<!--{if !IS_ROBOT}-->
 			<!--{if $_G['uid']}-->
 			<ul id="myprompt_menu" class="p_pop" style="display: none;">
@@ -125,43 +99,10 @@
 					<h2><!--{if !isset($_G['setting']['navlogos'][$mnid])}--><a href="{if $_G['setting']['domain']['app']['default']}http://{$_G['setting']['domain']['app']['default']}/{else}./{/if}" title="$_G['setting']['bbname']">{$_G['style']['boardlogo']}</a><!--{else}-->$_G['setting']['navlogos'][$mnid]<!--{/if}--></h2>
 					<!--{template common/header_userstatus}-->
 				</div>
-
-				<div id="nv">
-					<a href="javascript:;" id="qmenu" onmouseover="delayShow(this, function () {showMenu({'ctrlid':'qmenu','pos':'34!','ctrlclass':'a','duration':2});showForummenu($_G[fid]);})">{lang my_nav}</a>
-					<ul>
-						<!--{loop $_G['setting']['navs'] $nav}-->
-							<!--{if $nav['available'] && (!$nav['level'] || ($nav['level'] == 1 && $_G['uid']) || ($nav['level'] == 2 && $_G['adminid'] > 0) || ($nav['level'] == 3 && $_G['adminid'] == 1))}--><li {if $mnid == $nav[navid]}class="a" {/if}$nav[nav]></li><!--{/if}-->
-						<!--{/loop}-->
-					</ul>
-					<!--{hook/global_nav_extra}-->
-				</div>
-				<!--{if !empty($_G['setting']['plugins']['jsmenu'])}-->
-					<ul class="p_pop h_pop" id="plugin_menu" style="display: none">
-					<!--{loop $_G['setting']['plugins']['jsmenu'] $module}-->
-						 <!--{if !$module['adminid'] || ($module['adminid'] && $_G['adminid'] > 0 && $module['adminid'] >= $_G['adminid'])}-->
-						 <li>$module[url]</li>
-						 <!--{/if}-->
-					<!--{/loop}-->
-					</ul>
-				<!--{/if}-->
-				$_G[setting][menunavs]
-				<div id="mu" class="cl">
-				<!--{if $_G['setting']['subnavs']}-->
-					<!--{loop $_G[setting][subnavs] $navid $subnav}-->
-						<!--{if $_G['setting']['navsubhover'] || $mnid == $navid}-->
-						<ul class="cl {if $mnid == $navid}current{/if}" id="snav_$navid" style="display:{if $mnid != $navid}none{/if}">
-						$subnav
-						</ul>
-						<!--{/if}-->
-					<!--{/loop}-->
-				<!--{/if}-->
-				</div>
-				<!--{ad/subnavbanner/a_mu}-->
-				<!--{subtemplate common/pubsearchform}-->
 			</div>
 		</div>
 
 		<!--{hook/global_header}-->
 	<!--{/if}-->
 
-	<div id="wp" class="wp">
+	<div id="wp" class="wp" style="width:86% ">
