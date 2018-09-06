@@ -2,7 +2,7 @@
 
 
 $_config = array();
-$_config['plugindeveloper'] = true; //测试
+// $_config['plugindeveloper'] = true; //测试
 // ----------------------------  CONFIG DB  ----------------------------- //
 $_config['db']['1']['dbhost'] = '127.0.0.1';
 $_config['db']['1']['dbuser'] = 'root';

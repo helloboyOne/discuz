@@ -636,6 +636,30 @@ if($filter !== 'hot') {
 	$threadlist = array_merge($threadlist, C::t('forum_thread')->fetch_all_search($filterarr, $tableid, $start_limit, $_G['tpp'], $_order, '', $indexadd));
 	unset($_order);
 
+//时间转化
+	$query = DB::query("SELECT m.uid,c.username,f.threads,f.posts FROM ".DB::table("forum_forum")." f LEFT JOIN ".DB::table("forum_moderator")." m on f.fid=m.fid LEFT JOIN ".DB::table("common_member")." c on m.uid=c.uid WHERE f.`fid`='".$_GET['fid']."'");
+	while($mood = DB::fetch($query)) {
+		$user[] = $mood;
+	}
+	foreach ($threadlist as $key => $value) {
+		$threadlist[$key]['lastpost'] =  date('Y-m-d H:i:s',$value['lastpost']); 
+	}
+	// echo $user[0]['uid'];die;
+	$avatar_img = avatar($user[0]['uid']);
+ 
+	// 分页处理  
+	$page = intval(getgpc('pageNo')) ? intval($_GET['pageNo']) : 1;
+	$perpage = 10;
+	$checknum = count($threadlist);
+	$total_page = ceil($checknum/$perpage);
+	$offset = ($page-1)*$perpage;
+
+	$newarr = array_slice($threadlist, $offset, $perpage);
+	$pageNow = $page;
+	$up_page = $pageNow - 1;
+	$down_page = $pageNow + 1;
+
+
 	if(empty($threadlist) && $page <= ceil($_G['forum_threadcount'] / $_G['tpp'])) {
 		require_once libfile('function/post');
 		updateforumcount($_G['fid']);

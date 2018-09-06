@@ -1,4 +1,5 @@
-<link rel="stylesheet" type="text/css" href="data/cache/bootstrap.css">
+<!--{template common/header}-->
+
 <link rel="stylesheet" href="data/cache/list.css">
 <link rel="stylesheet" href="data/cache/listStyle.css">
 <style>
@@ -8,7 +9,7 @@
          border: none;
     }
     .fl{
-        border: none !important;
+        border: none;
     }
     a{
         color: #666666;
@@ -21,26 +22,9 @@
         margin-top: 50px;
     }
 </style>
-<!--{template common/header}-->
-
-<!--{if $_G['forum']['ismoderator']}-->
-	<script type="text/javascript" src="{$_G[setting][jspath]}forum_moderate.js?{VERHASH}"></script>
-<!--{/if}-->
-<style id="diy_style" type="text/css"></style>
-<!--[diy=diynavtop]--><div id="diynavtop" class="area"></div><!--[/diy]-->
-
-<!--{ad/text/wp a_t}-->
-<div class="wp">
-	<!--[diy=diy1]--><div id="diy1" class="area"></div><!--[/diy]-->
-</div>
-<div id="eui-main-body">
-	
+<!-- <link rel="stylesheet" href="data/cache/layer.css"> -->
+<div id="eui-main-body" style="margin-top: 60px;">
     <div class="container">
-<div id="pt" class="bm cl">
-	<div class="z">
-      <a href="forum.php">首页</a>$navigation
-	</div>
-</div>
         <div class="row">
             <div class="col-md-12 hidden-xs">
                 <div class="fui-main-header">
@@ -59,59 +43,22 @@
         </div>
         <div class="clearfix mb50 row">
             <div class="visible-xs-block visible-sm-block col-xs-12">
-                            <!--{if $_G['uid']==0 }-->
-                    <div class="fui-personal-info">
-
-
-                        <div class="col-xs-5 col-sm-6 avatar"><img class="photo" src="https://developer.baidu.com/resources/online/forum/img/photo.png" alt=""></div>
-                        <div class="no-login col-xs-7 col-sm-6">
-                             <p class="login-in"><a class="btn-01 eui-btn-01" data-login-check="true" onclick="showWindow('login', this.href)" href="member.php?mod=logging&action=login">马上登录</a>
+                <div class="fui-personal-info">
+                    <div class="col-xs-5 col-sm-6 avatar"><img class="photo" src="https://developer.baidu.com/resources/online/forum/img/photo.png" alt=""></div>
+                    <div class="no-login col-xs-7 col-sm-6">
+                        <p class="login-in"><a class="btn-01 eui-btn-01" data-login-check="true" href="javascript:void(0);">马上登录</a>
                         </p>
                         <p class="registration">
-                            <a class="btn-02 eui-btn-01" href="member.php?mod=register">立即注册</a>
+                            <a class="btn-02 eui-btn-01" href="https://passport.baidu.com/v2/?reg&amp;tpl=newdev&amp;overseas=1&amp;u=http://cloud.baidu.com/forum/topic/list?boardId=105">立即注册</a>
                         </p>
-                        </div>
                     </div>
-                    <!--{else}-->
-                    <div class="fui-personal-info">
-    
-        <p class="name">Hi,{$user[0]['username']}</p>
-
-        <p class="deprecated">
-            
-                
-                    $avatar_img
-                
-            
-        </p>
-        <ul class="fui-personal-data">
-            <li>
-	            <span class="data"><a href="javascript:void(0);">
-                    
-                        {$user[0]['threads']}
-                    
-                    
-                </a></span>
-                <span class="type">主题数</span>
-            </li>
-            <li>
-	            <span class="data"><a href="javascript:void(0);">
-                    
-                        {$user[0]['posts']}
-                    
-                    
-                </a></span>
-                <span class="type">回复数</span>
-            </li>
-        </ul>
-</div>
-                   	<!--{/if}--> 
+                </div>
             </div>
             <div class="topic-list-column fui-column-02 col-md-9 col-xs-12">
                 <div>
                     <div class="hd">
                         <div class="">
-                            <img class="img fl" src="static/image/newimages/pic.png"  alt="">
+                            <img class="img fl" src="/discuz/static/image/newimages/pic.png"  alt="">
                             <h2 class="title">App大赛专区</h2>
                             <div class="title-wrap fl">
                                 <span class="boardmaster">版主：
@@ -161,21 +108,21 @@
                             		    	                           	<!--{if  $total_page >1 }-->
                                                                         
 	
-                            	<a currentpage="1" href="forum.php?mod=forumdisplay&fid=$value['fid']&amp;pageNo=1" onclick="">首页</a>
+                            	<a currentpage="1" href="forum.php?mod=forumdisplay&fid=37&amp;pageNo=1" onclick="">首页</a>
 
                     
                             
                             	    	                           	<!--{if $pageNow >1 && $total_page >0 }-->
 	
-                            	<a currentpage="{$up_page}" href="forum.php?mod=forumdisplay&fid=$value['fid']&amp;pageNo={$up_page}" onclick="">上一页</a>
+                            	<a currentpage="{$up_page}" href="forum.php?mod=forumdisplay&fid=37&amp;pageNo={$up_page}" onclick="">上一页</a>
 
 
                             	<!--{/if}--> 
                             	<!--{eval for($i=1;$i<=$total_page;$i++){ }-->
                             	<!--{if $i == $pageNow}-->
-	<a currentpage="{$i}" class="active" href="forum.php?mod=forumdisplay&fid=$value['fid']&amp;pageNo={$i}" onclick="">$i</a>
+	<a currentpage="{$i}" class="active" href="forum.php?mod=forumdisplay&fid=37&amp;pageNo={$i}" onclick="">$i</a>
                             	<!--{else}-->
-<a currentpage="{$i}" href="forum.php?mod=forumdisplay&fid=$value['fid']&amp;pageNo={$i}" onclick="">$i</a>
+<a currentpage="{$i}" href="forum.php?mod=forumdisplay&fid=37&amp;pageNo={$i}" onclick="">$i</a>
 
                             	<!--{/if}--> 
 								
@@ -183,11 +130,11 @@
 								<!--{eval }} 
 
 								<!--{eval echo $total_page;}-->
-                            	<!-- <span class="active"><a currentpage="1" href="forum.php?mod=forumdisplay&fid=$value['fid']&amp;pageNo=1" onclick="">1</a>
+                            	<!-- <span class="active"><a currentpage="1" href="forum.php?mod=forumdisplay&fid=37&amp;pageNo=1" onclick="">1</a>
                             	</span><a currentpage="2" href="forum.php?mod=forumdisplay&fid=37&amp;pageNo=2" onclick="">2</a><a currentpage="3" href="forum.php?mod=forumdisplay&fid=37&amp;pageNo=3" onclick="">3</a><a currentpage="4" href="forum.php?mod=forumdisplay&fid=37&amp;pageNo=4" onclick="">4</a><a currentpage="5" href="forum.php?mod=forumdisplay&fid=37&amp;pageNo=5" onclick="">5</a><a currentpage="2" href="forum.php?mod=forumdisplay&fid=37&amp;pageNo=2" onclick="">下一页</a><a currentpage="160" href="forum.php?mod=forumdisplay&fid=37&amp;pageNo=160" onclick="">尾页</a></div> -->
                             	                           	<!--{if $pageNow !=$total_page }-->
 	
-                            	<a currentpage="{$down_page}" href="forum.php?mod=forumdisplay&fid=$value['fid']&amp;pageNo={$down_page}" onclick="">下一页</a>
+                            	<a currentpage="{$down_page}" href="forum.php?mod=forumdisplay&fid=37&amp;pageNo={$down_page}" onclick="">下一页</a>
 
 
                             	<!--{/if}--> 
@@ -207,61 +154,28 @@
 
                 <div class="hidden-xs hidden-sm">
 
-	               <!--{if $_G['uid']==0 }-->
+
+
                     <div class="fui-personal-info">
 
 
                         <div class="col-xs-5 col-sm-6 avatar"><img class="photo" src="https://developer.baidu.com/resources/online/forum/img/photo.png" alt=""></div>
                         <div class="no-login col-xs-7 col-sm-6">
-                             <p class="login-in"><a class="btn-01 eui-btn-01" data-login-check="true" onclick="showWindow('login', this.href)" href="member.php?mod=logging&action=login">马上登录</a>
-                        </p>
-                        <p class="registration">
-                            <a class="btn-02 eui-btn-01" href="member.php?mod=register">立即注册</a>
-                        </p>
-                        </div>
-                    <!--{else}-->
-                    <div class="fui-personal-info">
-    
-        <p class="name">Hi,{$user[0]['username']}</p>
+                            <p class="login-in"><a class="btn-01 eui-btn-01" data-login-check="true" href="javascript:void(0);" data-type="login">马上登录</a>
+                            </p>
 
-        <p class="deprecated">
-            
-                
-                   <!--  <img class="photo" src="https://himg.bdimg.com/sys/portrait/item/39c5d72484fccef4g5ea939c55ea9.jpg" alt=""> -->
-                   $avatar_img
-                
-                
-            
-        </p>
-        <ul class="fui-personal-data">
-            <li>
-	            <span class="data"><a href="javascript:void(0);">
-                    
-                        {$user[0]['threads']}
-                    
-                    
-                </a></span>
-                <span class="type">主题数</span>
-            </li>
-            <li>
-	            <span class="data"><a href="javascript:void(0);">
-                    
-                        {$user[0]['posts']}
-                    
-                    
-                </a></span>
-                <span class="type">回复数</span>
-            </li>
-        </ul>
-    
-    
-</div>
-                   	<!--{/if}--> 
-  
+                            <p class="registration">
+                                <a class="btn-02 eui-btn-01" data-type="register" href="javascript:void(0);">立即注册</a>
+
+                            </p>
+                        </div>
+
+
                     </div>
 
                 </div>
            </div>
        </div>
    </div>
+
 <!--{template common/footer}-->
