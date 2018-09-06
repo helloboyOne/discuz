@@ -2,7 +2,7 @@
 
 
 $_config = array();
-
+$_config['plugindeveloper'] = true; //测试
 // ----------------------------  CONFIG DB  ----------------------------- //
 $_config['db']['1']['dbhost'] = '127.0.0.1';
 $_config['db']['1']['dbuser'] = 'root';
@@ -10,6 +10,7 @@ $_config['db']['1']['dbpw'] = 'root';
 $_config['db']['1']['dbcharset'] = 'utf8';
 $_config['db']['1']['pconnect'] = '0';
 $_config['db']['1']['dbname'] = 'ultrax';
+// $_config['db']['1']['dbname'] = 'discuz';
 $_config['db']['1']['tablepre'] = 'pre_';
 $_config['db']['slave'] = '';
 $_config['db']['common']['slave_except_table'] = '';
