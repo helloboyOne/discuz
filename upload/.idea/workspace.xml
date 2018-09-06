@@ -88,13 +88,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="viewthread.htm" pinned="false" current-in-tab="true">
+      <file leaf-file-name="viewthread.htm" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/template/default/forum/viewthread.htm">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="163">
-              <caret line="309" column="6" selection-start-line="309" selection-start-column="6" selection-end-line="309" selection-end-column="6" />
+            <state relative-caret-position="235">
+              <caret line="318" column="40" selection-start-line="318" selection-start-column="40" selection-end-line="318" selection-end-column="40" />
               <folding>
                 <element signature="e#13556#22835#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+        <entry file="file://E:/lenovo/discuzList/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="322">
+              <caret line="13" column="23" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
+              <folding>
+                <element signature="n#div#0;n#body#0;n#html#0;n#!!top" />
               </folding>
             </state>
           </provider>
@@ -235,12 +247,12 @@
       <option name="presentableId" value="Default" />
       <updated>1536139074510</updated>
       <workItem from="1536139076250" duration="3196000" />
-      <workItem from="1536198226178" duration="5930000" />
+      <workItem from="1536198226178" duration="6916000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9126000" />
+    <option name="totallyTimeSpent" value="10112000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -380,10 +392,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/template/default/forum/viewthread.htm">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="309" column="6" selection-start-line="309" selection-start-column="6" selection-end-line="309" selection-end-column="6" />
+        <state relative-caret-position="235">
+          <caret line="318" column="40" selection-start-line="318" selection-start-column="40" selection-end-line="318" selection-end-column="40" />
           <folding>
             <element signature="e#13556#22835#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://E:/lenovo/discuzList/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="13" column="23" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
+          <folding>
+            <element signature="n#div#0;n#body#0;n#html#0;n#!!top" />
           </folding>
         </state>
       </provider>
