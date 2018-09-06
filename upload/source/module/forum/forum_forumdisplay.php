@@ -644,9 +644,9 @@ if($filter !== 'hot') {
 	foreach ($threadlist as $key => $value) {
 		$threadlist[$key]['lastpost'] =  date('Y-m-d H:i:s',$value['lastpost']); 
 	}
-	// echo $user[0]['uid'];die;
-	$avatar_img = avatar($user[0]['uid']);
- 
+	// var_dump($_G);die;
+	$avatar_img = avatar($_G['uid']);
+
 	// 分页处理  
 	$page = intval(getgpc('pageNo')) ? intval($_GET['pageNo']) : 1;
 	$perpage = 10;
