@@ -26,6 +26,54 @@
 	<!--{if $_GET['diy'] == 'yes' && check_diy_perm($topic)}-->
 		<link rel="stylesheet" type="text/css" id="diy_common" href="{$_G['setting']['csspath']}{STYLEID}_css_diy.css?{VERHASH}" />
 	<!--{/if}-->
+<style>
+	.nav-bar, nav ul {
+		position: relative;
+	}
+	.nav-bar {
+		width: 100%;
+		z-index: 9;
+		opacity: .9;
+		color: #fff;
+		font-size: 14px;
+		margin: auto;
+		height: 60px;
+	}
+	.nav-bar, nav {
+		background: #1f1f1f;
+	}
+	nav {
+		width: 1200px;
+		line-height: 60px;
+		margin: 0 auto;
+	}
+	nav h3 {
+		display: inline-block;
+		line-height: 55px;
+		padding-left: 10px;
+	}
+	nav ul {
+		height: 100%;
+		float: left;
+	}
+	nav ul li {
+		padding: 0 10px;
+		cursor: pointer;
+	}
+	.navlink {
+		float: left;
+		margin-right: 20px;
+		position: relative;
+		color: #ffffff !important;
+	}
+	.login {
+		float: right;
+		margin-right: 40px;
+	}
+	.login a {
+		color: #fff !important;
+	}
+</style>
 </head>
 
 <body id="nv_{$_G[basescript]}" class="pg_{CURMODULE}{if $_G['basescript'] === 'portal' && CURMODULE === 'list' && !empty($cat)} {$cat['bodycss']}{/if}" onkeydown="if(event.keyCode==27) return false;">
@@ -92,17 +140,17 @@
 		<!--{/if}-->
 
 		<!--{ad/headerbanner/wp a_h}-->
-		<div id="hd">
-			<div class="wp">
-				<div class="hdc cl">
-					<!--{eval $mnid = getcurrentnav();}-->
-					<h2><!--{if !isset($_G['setting']['navlogos'][$mnid])}--><a href="{if $_G['setting']['domain']['app']['default']}http://{$_G['setting']['domain']['app']['default']}/{else}./{/if}" title="$_G['setting']['bbname']">{$_G['style']['boardlogo']}</a><!--{else}-->$_G['setting']['navlogos'][$mnid]<!--{/if}--></h2>
-					<!--{template common/header_userstatus}-->
-				</div>
-			</div>
-		</div>
-
+	<div class="nav-bar"><nav><a href="http://120.136.130.24"><img src="static/image/newimages/logo.62bdb7e.png" height="50px" width="300px" style="float: left; margin-top: 5px;"></a> <h3>&nbsp;</h3> <div class="nav_show" style="float: right;"><ul><a href="http://120.136.130.25/discuz/upload/forum.php?mod=forumdisplay&fid=2" class="navlink">论坛</a></ul><div class="login">
+		<!--{if $_G['uid']==0 }-->
+		<a href="member.php?mod=logging&action=login" class="" onclick="showWindow('login', this.href)">登录&nbsp;</a>|
+		<a href="member.php?mod=register">注册</a>
+		<!--{else}-->
+		<a href="javascript:;" style="margin-right: 10px">您好，{$user[0]['username']}</a>
+		<a href="member.php?mod=logging&action=logout&formhash={FORMHASH}">退出</a>
+		<!--{/if}--> 
+	</div></div></nav>
+	</div>
 		<!--{hook/global_header}-->
 	<!--{/if}-->
 
-	<div id="wp" class="wp" style="background-color: #f3f3f3;width: 100%">
+	<div id="wp" class="wp" style="background-color: #f3f3f3;width: 100%;padding-bottom: 20px">
