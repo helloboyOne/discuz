@@ -70,12 +70,10 @@ if($('$showid')) {
 			sectplcode[2] + '<span id="v$showid">$message</span>' + sectplcode[3];
 		evalscript(string);
 		$('$showid').innerHTML = string;
-		$('$showid').lastElementChild.innerHTML = ' <a href="javascript:;" onclick="updateseccode(\'$idhash\');doane(event);" class="xi2">$seclang[seccode_update]</a>' 
 	} else {
 		var string = '$message';
 		evalscript(string);
 		$('v$showid').innerHTML = string;
-				$('$showid').lastElementChild.innerHTML = ' <a href="javascript:;" onclick="updateseccode(\'$idhash\');doane(event);" class="xi2">$seclang[seccode_update]</a>' 
 	}
 	$htmlcode
 }
