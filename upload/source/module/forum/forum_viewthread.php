@@ -536,6 +536,24 @@ if($maxposition) {
 		$lastposition = $post['position'];
 	}
 	$realpost = count($postarr);
+
+// 下面即是补充的数据
+	foreach ($postarr as $key => $value) {
+		$postarr[$key]['dateline'] = date('Y.h.d H:i:s',$value['dateline']);
+		$postarr[$key]['avatar_img'] = avatar($value['authorid']);
+		$query = DB::query("SELECT t.views,t.replies,f.threads,f.posts FROM ".DB::table("forum_thread")." t LEFT JOIN ".DB::table("forum_post")." p on t.tid=p.tid LEFT JOIN ".DB::table("forum_forum")." f on f.fid=p.fid  WHERE t.`authorid`='".$value['authorid']."'");
+		while($mood = DB::fetch($query)) {
+			$postarr[$key]['replies'] = $mood['replies'];
+			$postarr[$key]['views'] = $mood['views'];
+			$postarr[$key]['posts'] = $mood['posts'];
+			$postarr[$key]['threads'] = $mood['threads'];
+		}
+	}
+    $postdata = $postarr;
+	unset($postdata[1]);
+	// 及总回复数
+	// $lou_num = count($postarr);
+	// var_dump($postarr);die;
 	if($realpost != $_G['ppp'] || $have_badpost) {
 		$k = 0;
 		for($i = $start; $i < $end; $i ++) {
