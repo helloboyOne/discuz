@@ -15,7 +15,7 @@
         <entry file="file://$PROJECT_DIR$/template/default/forum/seccheck_post.htm">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="69">
-              <caret line="1" column="59" lean-forward="true" selection-start-line="1" selection-start-column="59" selection-end-line="1" selection-end-column="59" />
+              <caret line="1" column="18" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#sec#0;n#span#0;n#sec#0;n#!!top" expanded="true" />
               </folding>
@@ -23,27 +23,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="1_1_member_login.tpl.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data/template/1_1_member_login.tpl.php">
+      <file leaf-file-name="DiscuzTips.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/source/plugin/manyou/Service/DiscuzTips.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="316">
-              <caret line="36" column="127" selection-start-line="36" selection-start-column="127" selection-end-line="36" selection-end-column="127" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="common.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/static/js/common.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="950" column="5" lean-forward="true" selection-start-line="950" selection-start-column="5" selection-end-line="950" selection-end-column="5" />
+            <state relative-caret-position="399">
+              <caret line="72" column="21" selection-start-line="72" selection-start-column="21" selection-end-line="72" selection-end-column="21" />
               <folding>
-                <element signature="e#144#150#0" expanded="true" />
-                <element signature="e#150#156#0" expanded="true" />
-                <element signature="e#35736#36675#0" />
-                <element signature="e#146#152#0" expanded="true" />
-                <element signature="e#152#158#0" expanded="true" />
-                <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
+                <element signature="e#7#180#0#PHP" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -53,7 +40,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>navi</find>
       <find>pgb</find>
       <find>$navigation</find>
       <find>modmenu</find>
@@ -83,6 +69,7 @@
       <find>showWindow</find>
       <find>setMenuPosition</find>
       <find>style.top</find>
+      <find>DiscuzTips.php</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -108,6 +95,7 @@
         <option value="$PROJECT_DIR$/source/module/misc/misc_seccode.php" />
         <option value="$PROJECT_DIR$/template/default/forum/seccheck_post.htm" />
         <option value="$PROJECT_DIR$/static/js/common.js" />
+        <option value="$PROJECT_DIR$/source/plugin/manyou/Service/DiscuzTips.php" />
       </list>
     </option>
   </component>
@@ -141,38 +129,7 @@
             <path>
               <item name="upload" type="b2602c69:ProjectViewProjectNode" />
               <item name="upload" type="462c0819:PsiDirectoryNode" />
-              <item name="source" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="upload" type="b2602c69:ProjectViewProjectNode" />
-              <item name="upload" type="462c0819:PsiDirectoryNode" />
-              <item name="source" type="462c0819:PsiDirectoryNode" />
-              <item name="module" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="upload" type="b2602c69:ProjectViewProjectNode" />
-              <item name="upload" type="462c0819:PsiDirectoryNode" />
-              <item name="source" type="462c0819:PsiDirectoryNode" />
-              <item name="module" type="462c0819:PsiDirectoryNode" />
-              <item name="misc" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="upload" type="b2602c69:ProjectViewProjectNode" />
-              <item name="upload" type="462c0819:PsiDirectoryNode" />
-              <item name="template" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="upload" type="b2602c69:ProjectViewProjectNode" />
-              <item name="upload" type="462c0819:PsiDirectoryNode" />
-              <item name="template" type="462c0819:PsiDirectoryNode" />
-              <item name="default" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="upload" type="b2602c69:ProjectViewProjectNode" />
-              <item name="upload" type="462c0819:PsiDirectoryNode" />
-              <item name="template" type="462c0819:PsiDirectoryNode" />
-              <item name="default" type="462c0819:PsiDirectoryNode" />
-              <item name="forum" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -212,12 +169,12 @@
       <workItem from="1536139076250" duration="3196000" />
       <workItem from="1536198226178" duration="7898000" />
       <workItem from="1536226175106" duration="4304000" />
-      <workItem from="1536284290440" duration="14970000" />
+      <workItem from="1536284290440" duration="15682000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30368000" />
+    <option name="totallyTimeSpent" value="31080000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -547,23 +504,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/template/default/forum/seccheck_post.htm">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="1" column="59" lean-forward="true" selection-start-line="1" selection-start-column="59" selection-end-line="1" selection-end-column="59" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#sec#0;n#span#0;n#sec#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/template/1_1_member_login.tpl.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="36" column="127" selection-start-line="36" selection-start-column="127" selection-end-line="36" selection-end-column="127" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/source/plugin/wechat/template/touch/wechat_header.htm">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -582,6 +522,34 @@
             <element signature="e#146#152#0" expanded="true" />
             <element signature="e#152#158#0" expanded="true" />
             <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/template/1_1_member_login.tpl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="316">
+          <caret line="36" column="127" selection-start-line="36" selection-start-column="127" selection-end-line="36" selection-end-column="127" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template/default/forum/seccheck_post.htm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="1" column="18" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#sec#0;n#span#0;n#sec#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/plugin/manyou/Service/DiscuzTips.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="72" column="21" selection-start-line="72" selection-start-column="21" selection-end-line="72" selection-end-column="21" />
+          <folding>
+            <element signature="e#7#180#0#PHP" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
