@@ -542,14 +542,17 @@ if($maxposition) {
 		$postarr[$key]['dateline'] = date('Y.h.d H:i:s',$value['dateline']);
 		$postarr[$key]['avatar_img'] = avatar($value['authorid']);
 		$query = DB::query("SELECT t.views,t.replies,f.threads,f.posts FROM ".DB::table("forum_thread")." t LEFT JOIN ".DB::table("forum_post")." p on t.tid=p.tid LEFT JOIN ".DB::table("forum_forum")." f on f.fid=p.fid  WHERE t.`authorid`='".$value['authorid']."'");
+		
 		while($mood = DB::fetch($query)) {
-			$postarr[$key]['replies'] = $mood['replies'];
-			$postarr[$key]['views'] = $mood['views'];
-			$postarr[$key]['posts'] = $mood['posts'];
-			$postarr[$key]['threads'] = $mood['threads'];
+			$postarr[$key]['replies'] = ($mood['replies'] != null) ? $mood['replies'] : 0;
+			$postarr[$key]['views'] = ($mood['views'] != null) ? $mood['views'] : 0;
+			$postarr[$key]['posts'] = ($mood['posts'] != null) ? $mood['posts'] : 0;
+			$postarr[$key]['threads'] = ($mood['threads'] != null) ? $mood['threads'] : 0;
 		}
 	}
+
     $postdata = $postarr;
+    $lou_arr = $postdata[1]; 
 	unset($postdata[1]);
 	// 及总回复数
 	// $lou_num = count($postarr);

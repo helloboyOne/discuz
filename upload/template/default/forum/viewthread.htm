@@ -131,7 +131,7 @@
 	<!--{/if}-->
 
 	<!--{hook/viewthread_title_row}-->
-
+<!--{if $page == 1 }-->
 <!-- 这是楼主信息 -->
 	 <ul class="reply-list">
             <li class="item reply-column">
@@ -148,13 +148,13 @@
                                    <!--  <img class="photo" src="https://himg.bdimg.com/sys/portrait/item/f9db6163687561637569g640bf9db640b.jpg" alt=""> -->
 
 
-                                    {$postarr[1]['author']}
+                                    {$lou_arr['author']}
                                 </div>
 
                             </div>
 
-                            <span class="time">发表于 {$postarr[1]['dateline']}</span>
-                            <span class="pv hidden-xs">$postarr[1]['views'] 浏览</span>
+                            <span class="time">发表于 {$lou_arr['dateline']}</span>
+                            <span class="pv hidden-xs">$lou_arr['views'] 浏览</span>
                             <span class="reply hidden-xs">$lou_num 回复</span>
                             <span class="good hidden-xs">2 赞</span>
 
@@ -163,8 +163,8 @@
 
                         </div>
                         <div class="bd">
-                            <h3 class="title">{$postarr[1]['subject']}</h3>
-                            <p>{$postarr[1]['message']}</p>
+                            <h3 class="title">{$lou_arr['subject']}</h3>
+                            <p>{$lou_arr['message']}</p>
                             
                         </div>
                         <div class="ft">
@@ -174,14 +174,10 @@
 
                                 </li>
 
-                                 <li class="rel"><a class="btn-good" data-event="good"
-                                                           data-object-id="5463" data-type="TOPIC" href="#"
-                                                           data-bdstoken="c24a59a2ba42dc75162776e046c81f85"
-                                                           
-                                        >赞</a></li>
+                                    <li><a class="replyadd" href="forum.php?mod=misc&action=postreview&do=support&tid=$_G[tid]&pid=$post[pid]&hash={FORMHASH}" {if $_G['uid']}onclick="ajaxmenu(this, 3000, 1, 0, '43', '');return false;"{else} onclick="showWindow('login', this.href)"{/if} onmouseover="this.title = ($('review_support_$post[pid]').innerHTML ? $('review_support_$post[pid]').innerHTML : 0) + ' {lang activity_member_unit} {lang support_reply}'">{lang support_reply} <span id="review_support_$post[pid]">$post[postreview][support]</span></a></li>
                                         <li class="line">|</li>
 
-                                <li><a class="btn-reply" data-event="reply" data-reply-id="" href="forum.php?mod=post&action=reply&fid= $postarr[1]['fid']&tid=$postarr[1]['tid']" data-login-check="true">回复</a></li>
+                                <li><a class="btn-reply" data-event="reply" data-reply-id="" href="forum.php?mod=post&action=reply&fid= $lou_arr['fid']&tid=$lou_arr['tid']" data-login-check="true">回复</a></li>
                             </ul>
                         </div>
                        
@@ -190,7 +186,7 @@
                 <div class="reply-user-info reply-column-user hidden-xs">
                     <div class="hd
 
-				                ">{$postarr[1]['author']}</div>
+				                ">{$lou_arr['author']}</div>
                     <div class="bd">
                         <p class="mark">
 
@@ -200,7 +196,7 @@
 
 
                             <!-- <img class="photo" src="https://himg.bdimg.com/sys/portrait/item/f9db6163687561637569g640bf9db640b.jpg" alt=""> -->
-                            	{$postarr[1]['avatar_img']}
+                            	{$lou_arr['avatar_img']}
 
 
                         </p>
@@ -209,7 +205,7 @@
 
 
 
-                                <span class="data">$postarr[1]['threads']</span>
+                                <span class="data">{$lou_arr['threads']}</span>
 
                                 <span class="type">主题数</span>
                             </li>
@@ -217,7 +213,7 @@
 
 
 
-                                <span class="data">$postarr[1]['posts'] </span>
+                                <span class="data">{$lou_arr['posts']} </span>
 
                                 <span class="type">回复数</span>
                             </li>
@@ -229,7 +225,7 @@
                 
             </li>
         </ul>
-
+<!--{/if}-->
 	<!-- 详情页数据起始位置 -->
 	<!--{loop $postdata $key $value}-->
 	<!-- <ul>
@@ -291,18 +287,20 @@
 
                                     </li>
 
-                                     <li class="rel"><a class="btn-good" data-event="good"
+                                     <!-- <li class="rel"><a class="btn-good" data-event="good"
                                                            data-object-id="5463" data-type="TOPIC" href="#"
                                                            data-bdstoken="c24a59a2ba42dc75162776e046c81f85"
                                                            
-                                        >赞</a></li>
+                                        >赞</a></li> -->
+
+                                        <li><a class="replyadd" href="forum.php?mod=misc&action=postreview&do=support&tid=$_G[tid]&pid=$post[pid]&hash={FORMHASH}" {if $_G['uid']}onclick="ajaxmenu(this, 3000, 1, 0, '43', '');return false;"{else} onclick="showWindow('login', this.href)"{/if} onmouseover="this.title = ($('review_support_$post[pid]').innerHTML ? $('review_support_$post[pid]').innerHTML : 0) + ' {lang activity_member_unit} {lang support_reply}'">{lang support_reply} <span id="review_support_$post[pid]">$post[postreview][support]</span></a></li>
                                         <li class="line">|</li>
 
 
                                     <li>
-                                        <a class="btn-reply" data-event="reply" data-reply-id="10754" href="forum.php?mod=post&action=reply&fid= $value['fid']&tid=$value['tid']" data-login-check="true">回复</a>
+                                        <!-- <a class="btn-reply" data-event="reply" data-reply-id="10754" href="forum.php?mod=post&action=reply&fid= $value['fid']&tid=$value['tid']" onclick="showWindow('reply', this.href)">回复</a> -->
+                                        <a class="btn-reply" href="forum.php?mod=post&action=reply&fid=$_G[fid]&tid=$_G[tid]&reppost=$post[pid]&extra=$_GET[extra]&page=$page" onclick="showWindow('reply', this.href)">{lang reply}</a>
                                     </li>
-
                                 </ul>
                             </div>
                         </div>
