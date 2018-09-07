@@ -177,7 +177,11 @@
                                     <li><a class="replyadd" href="forum.php?mod=misc&action=postreview&do=support&tid=$_G[tid]&pid=$post[pid]&hash={FORMHASH}" {if $_G['uid']}onclick="ajaxmenu(this, 3000, 1, 0, '43', '');return false;"{else} onclick="showWindow('login', this.href)"{/if} onmouseover="this.title = ($('review_support_$post[pid]').innerHTML ? $('review_support_$post[pid]').innerHTML : 0) + ' {lang activity_member_unit} {lang support_reply}'">{lang support_reply} <span id="review_support_$post[pid]">$post[postreview][support]</span></a></li>
                                         <li class="line">|</li>
 
-                                <li><a class="btn-reply" data-event="reply" data-reply-id="" href="forum.php?mod=post&action=reply&fid= $lou_arr['fid']&tid=$lou_arr['tid']" data-login-check="true">回复</a></li>
+                                <<!-- li><a class="btn-reply" data-event="reply" data-reply-id="" href="forum.php?mod=post&action=reply&fid= $lou_arr['fid']&tid=$lou_arr['tid']" data-login-check="true">回复</a></li> -->
+
+                                <!--{if !$post['anonymous'] && $post['first'] && helper_access::check_module('follow')}-->
+						<li><a class="followp" href="home.php?mod=spacecp&ac=follow&op=relay&tid=$_G[tid]&from=forum" onclick="showWindow('relaythread', this.href, 'get', 0);" title="{lang follow_spread}"><i><img src="{IMGDIR}/rt.png" alt="{lang thread_realy}" />{lang thread_realy}<!--{if $_G['forum_thread']['relay']}--><span id="relaynumber" style="display:none">{$_G['forum_thread']['relay']}</span><!--{/if}--></i></a></li>
+					<!--{/if}-->
                             </ul>
                         </div>
                        
@@ -293,7 +297,10 @@
                                                            
                                         >赞</a></li> -->
 
-                                        <li><a class="replyadd" href="forum.php?mod=misc&action=postreview&do=support&tid=$_G[tid]&pid=$post[pid]&hash={FORMHASH}" {if $_G['uid']}onclick="ajaxmenu(this, 3000, 1, 0, '43', '');return false;"{else} onclick="showWindow('login', this.href)"{/if} onmouseover="this.title = ($('review_support_$post[pid]').innerHTML ? $('review_support_$post[pid]').innerHTML : 0) + ' {lang activity_member_unit} {lang support_reply}'">{lang support_reply} <span id="review_support_$post[pid]">$post[postreview][support]</span></a></li>
+                                        <li>	
+					<a class="replyadd" href="forum.php?mod=misc&action=postreview&do=support&tid=$_G[tid]&pid=$post[pid]&hash={FORMHASH}" {if $_G['uid']}onclick="ajaxmenu(this, 3000, 1, 0, '43', '');return false;"{else} onclick="showWindow('login', this.href)"{/if} onmouseover="this.title = ($('review_support_$post[pid]').innerHTML ? $('review_support_$post[pid]').innerHTML : 0) + ' {lang activity_member_unit} {lang support_reply}'">{lang support_reply} <span id="review_support_$post[pid]">$post[postreview][support]</span></a>
+				
+					</li>
                                         <li class="line">|</li>
 
 
