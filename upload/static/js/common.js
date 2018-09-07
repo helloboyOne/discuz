@@ -943,7 +943,8 @@ function setMenuPosition(showid, menuid, pos) {
 		}
 	}
 	if(ml) menuObj.style.left = ml + 'px';
-	if(mt) menuObj.style.top = mt + 'px';
+	if(mt && mt <= 300) menuObj.style.top = mt + 'px';
+	else menuObj.style.top = 300 + 'px';
 	if(direction == 0 && BROWSER.ie && !document.documentElement.clientHeight) {
 		menuObj.style.position = 'absolute';
 		menuObj.style.top = (document.body.clientHeight - menuObj.clientHeight) / 2 + 'px';
