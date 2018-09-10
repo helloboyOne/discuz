@@ -186,7 +186,7 @@
 </style>
 </head>
 
-<body id="nv_{$_G[basescript]}" class="pg_{CURMODULE}{if $_G['basescript'] === 'portal' && CURMODULE === 'list' && !empty($cat)} {$cat['bodycss']}{/if}" onkeydown="if(event.keyCode==27) return false;">
+<body id="nv_{$_G[basescript]}" class="pg_{CURMODULE}{if $_G['basescript'] === 'portal' && CURMODULE === 'list' && !empty($cat)} {$cat['bodycss']}{/if}" onkeydown="if(event.keyCode==27) return false;" style="background: #f3f3f3 !important">
 	<div id="append_parent"></div><div id="ajaxwaitid"></div>
 	<!--{if $_GET['diy'] == 'yes' && check_diy_perm($topic)}-->
 		<!--{template common/header_diy}-->
@@ -263,4 +263,4 @@
 		<!--{hook/global_header}-->
 	<!--{/if}-->
 
-	<div id="wp" class="wp" style="width: 95%;padding-bottom: 20px">
+	<div id="wp" class="wp" style="width: 95%;padding-bottom: 20px;padding-top: 56px">
