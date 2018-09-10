@@ -112,6 +112,7 @@
                             <!--{/if}-->
                             <!--{/if}-->
                         </div>
+<<<<<<< HEAD
                         <!--{else}-->
                         <div class="hm ptn">
                             <span class="xg1">{lang show}:</span> <span class="xi1">$_G[forum_thread][views]</span><span class="pipe">|</span><span class="xg1">{lang reply}:</span> <span class="xi1">$_G[forum_thread][allreplies]</span>
@@ -126,6 +127,152 @@
                             <!--{/if}-->
                             <a href="forum.php?mod=redirect&goto=nextoldset&tid=$_G[tid]" title="{lang last_thread}"><img src="{IMGDIR}/thread-prev.png" alt="{lang last_thread}" class="vm" /></a>
                             <a href="forum.php?mod=redirect&goto=nextnewset&tid=$_G[tid]" title="{lang next_thread}"><img src="{IMGDIR}/thread-next.png" alt="{lang next_thread}" class="vm" /></a>
+=======
+                        <div class="ft">
+                            <ul class="reply-topic-btns">
+                                <li class="admin-btns">
+
+
+                                </li>
+
+                                    <li><a class="replyadd" href="forum.php?mod=misc&action=postreview&do=support&tid=$_G[tid]&pid=$lou_arr[pid]&hash={FORMHASH}" {if $_G['uid']}onclick="ajaxmenu(this, 3000, 1, 0, '43', '');return false;"{else} onclick="showWindow('login', this.href)"{/if} onmouseover="this.title = ($('review_support_$lou_arr[pid]').innerHTML ? $('review_support_$lou_arr[pid]').innerHTML : 0) + ' {lang activity_member_unit} {lang support_reply}'">{lang support_reply} <span id="review_support_$lou_arr[pid]">$lou_arr[postreview][support]</span></a></li>
+                                        <li class="line">|</li>
+
+                             <li>
+                                        <!-- <a class="btn-reply" data-event="reply" zdata-reply-id="10754" href="forum.php?mod=post&action=reply&fid= $value['fid']&tid=$value['tid']" onclick="showWindow('reply', this.href)">回复</a> -->
+                                        <a class="btn-reply" href="forum.php?mod=post&action=reply&fid=$_G[fid]&tid=$_G[tid]&reppost=$post[pid]&extra=$_GET[extra]&page=$page" onclick="showWindow('reply', this.href)">{lang reply}</a>
+                                    </li>
+
+                                <!--{if !$post['anonymous'] && $post['first'] && helper_access::check_module('follow')}-->
+						<li><a class="followp" href="home.php?mod=spacecp&ac=follow&op=relay&tid=$_G[tid]&from=forum" onclick="showWindow('relaythread', this.href, 'get', 0);" title="{lang follow_spread}"><i><img src="{IMGDIR}/rt.png" alt="{lang thread_realy}" />{lang thread_realy}<!--{if $_G['forum_thread']['relay']}--><span id="relaynumber" style="display:none">{$_G['forum_thread']['relay']}</span><!--{/if}--></i></a></li>
+					<!--{/if}-->
+                            </ul>
+                        </div>
+                       
+                    </div>
+                </div>
+                <div class="reply-user-info reply-column-user hidden-xs">
+                    <div class="hd
+
+				                ">{$lou_arr['author']}</div>
+                    <div class="bd">
+                        <p class="mark">
+
+                            楼主
+                        </p>
+                        <p>
+
+
+                            <!-- <img class="photo" src="https://himg.bdimg.com/sys/portrait/item/f9db6163687561637569g640bf9db640b.jpg" alt=""> -->
+                            	{$lou_arr['avatar_img']}
+
+
+                        </p>
+                        <ul class="fui-personal-data">
+                            <li>
+
+
+
+                                <span class="data">{$lou_arr['threads']}</span>
+
+                                <span class="type">主题数</span>
+                            </li>
+                            <li>
+
+
+
+                                <span class="data">{$lou_arr['posts']} </span>
+
+                                <span class="type">回复数</span>
+                            </li>
+                        </ul>
+                        <!-- 用户已经登陆， 回复用户是管理员 或 当前用户是管理员 -->
+
+                    </div>
+                </div>
+                
+            </li>
+        </ul>
+<!--{/if}-->
+	<!-- 详情页数据起始位置 -->
+	<!--{loop $postdata $key $value}-->
+	<!-- <ul>
+	<li>帖子回复id：{$value['pid']}</li>
+	<li>帖子id:{$value['tid']}</li>
+	<li>论坛id:{$value['fid']}</li>
+	<li>作者：{$value['author']}</li>
+	<li>主题：{$value['subject']}</li>
+    <a href="#">内容：{$key}.{$value['message']}</a>
+    </ul> -->
+     <!-- 这是跟帖的回复信息 -->
+
+             <div id="js-reply-list" data-url="https://cloud.baidu.com/forum/reply/list?topicId=5463&amp;pageNo=1">
+
+
+			 <ul class="reply-list">
+
+
+                <li class="item reply-column" data-reply-id="10754">
+                    <div class="reply-topic-info reply-column-topic">
+                        <div class="reply-column-topic-inner">
+                            <div class="hd">
+                                <span class="floor fr">{$key}楼</span>
+
+                                <div class="reply-user-info reply-column-user small-photo">
+
+
+                                    <div class="hd">
+
+
+                                        <!-- <img class="photo" src="https://himg.bdimg.com/sys/portrait/item/c647775af350ba5bg1f2bc6471f2b.jpg" alt=""> -->
+
+
+
+                                        {$value['subject']}
+                                    </div>
+
+                                </div>
+
+
+
+
+                                <span class="time">发表于 {$value['dateline']}</span>
+
+                                <span class="good hidden-xs">2 赞</span>
+                            </div>
+
+                            <div class="bd">
+
+                                <p>{$value['message']}</p>
+                            </div>
+
+
+
+                            <div class="ft">
+                                <ul class="reply-topic-btns">
+                                    <li class="admin-btns">
+
+
+                                    </li>
+
+                                     <!-- <li class="rel"><a class="btn-good" data-event="good"
+                                                           data-object-id="5463" data-type="TOPIC" href="#"
+                                                           data-bdstoken="c24a59a2ba42dc75162776e046c81f85"
+                                                           
+                                        >赞</a></li> -->
+
+
+                                        <li><a class="replyadd" href="forum.php?mod=misc&action=postreview&do=support&tid=$_G[tid]&pid=$value[pid]&hash={FORMHASH}" {if $_G['uid']}onclick="ajaxmenu(this, 3000, 1, 0, '43', '');return false;"{else} onclick="showWindow('login', this.href)"{/if} onmouseover="this.title = ($('review_support_$post[pid]').innerHTML ? $('review_support_$post[pid]').innerHTML : 0) + ' {lang activity_member_unit} {lang support_reply}'">{lang support_reply} <span id="review_support_$value[pid]">$post[postreview][support]</span></a></li>
+                                        <li class="line">|</li>
+
+
+                                    <li>
+                                        <!-- <a class="btn-reply" data-event="reply" zdata-reply-id="10754" href="forum.php?mod=post&action=reply&fid= $value['fid']&tid=$value['tid']" onclick="showWindow('reply', this.href)">回复</a> -->
+                                        <a class="btn-reply" href="forum.php?mod=post&action=reply&fid=$_G[fid]&tid=$_G[tid]&reppost=$post[pid]&extra=$_GET[extra]&page=$page" onclick="showWindow('reply', this.href)">{lang reply}</a>
+                                    </li>
+                                </ul>
+                            </div>
+>>>>>>> 315a314e5748dc9767bceff89e3855006eb533e8
                         </div>
                         <!--{/if}-->
                         <!--{if $_G['setting']['close_leftinfo_userctrl']}-->
