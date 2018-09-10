@@ -1739,14 +1739,21 @@ if($_GET['action'] == 'votepoll' && submitcheck('pollsubmit', 1)) {
 
 	$post = C::t('forum_post')->fetch('tid:'.$_GET['tid'], $_GET['pid'], false);
 
-	if(!in_array($_GET['do'], $doArray) || empty($post) || $post['first'] == 1 || ($_G['setting']['threadfilternum'] && $_G['setting']['filterednovote'] && getstatus($post['status'], 11))) {
-		showmessage('undefined_action', NULL);
-	}
+// 	 if(!in_array($_GET['do'], $doArray) || empty($post) || $post['first'] == 1 || ($_G['setting']['threadfilternum'] && $_G['setting']['filterednovote'] && getstatus($post['status'], 11))) {
+// -               showmessage('undefined_action', NULL);
+// -       }
+
+
+	// if(!in_array($_GET['do'], $doArray) || empty($post) || $post['first'] == 1 ) {
+	// 	// echo 2;die;
+	// 	showmessage('undefined_action', NULL);
+	// }
 
 	$hotreply = C::t('forum_hotreply_number')->fetch_by_pid($post['pid']);
 	if($_G['uid'] == $post['authorid']) {
 		showmessage('noreply_yourself_error', '', array(), array('msgtype' => 3));
 	}
+
 
 	if(empty($hotreply)) {
 		$hotreply['pid'] = C::t('forum_hotreply_number')->insert(array(
@@ -1756,6 +1763,7 @@ if($_GET['action'] == 'votepoll' && submitcheck('pollsubmit', 1)) {
 			'against' => 0,
 			'total' => 0,
 		), true);
+		// var_dump(expression);die;
 	} else {
 		if(C::t('forum_hotreply_member')->fetch($post['pid'], $_G['uid'])) {
 			showmessage('noreply_voted_error', '', array(), array('msgtype' => 3));
