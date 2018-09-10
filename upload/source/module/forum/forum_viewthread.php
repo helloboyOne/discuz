@@ -578,7 +578,6 @@ if($_GET['checkrush'] && $rushreply) {
 
 
 if(!$maxposition && empty($postarr)) {
-
 	if(empty($_GET['viewpid'])) {
 		if($_G['forum_thread']['special'] == 2) {
 			$postarr = C::t('forum_post')->fetch_all_tradepost_viewthread_by_tid($_G['tid'], $visibleallflag, $_GET['authorid'], $tpids, $_G['forum_pagebydesc'], $ordertype, $start_limit, ($_G['forum_pagebydesc'] ? $_G['forum_ppp2'] : $_G['ppp']));
@@ -998,6 +997,7 @@ if(getstatus($_G['forum_thread']['status'], 10)) {
 }
 
 if(empty($_GET['viewpid'])) {
+
 	$sufix = '';
 	if($_GET['from'] == 'portal') {
 		$_G['disabledwidthauto'] = 1;
@@ -1016,6 +1016,7 @@ if(empty($_GET['viewpid'])) {
 		$post['message'] = cutstr(strip_tags(preg_replace('/(<ignore_js_op>.*<\/ignore_js_op>)/is', '', $post['message'])), 200);
 		require_once libfile('thread/album', 'include');
 	}
+//var_dump($postdata);die;
 	include template('diy:forum/viewthread'.$sufix.':'.$_G['fid']);
 } else {
 	$_G['setting']['admode'] = 0;

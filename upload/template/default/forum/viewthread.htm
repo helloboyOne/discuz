@@ -174,7 +174,7 @@
 
                                 </li>
 
-                                    <li><a class="replyadd" href="forum.php?mod=misc&action=postreview&do=support&tid=$_G[tid]&pid=$post[pid]&hash={FORMHASH}" {if $_G['uid']}onclick="ajaxmenu(this, 3000, 1, 0, '43', '');return false;"{else} onclick="showWindow('login', this.href)"{/if} onmouseover="this.title = ($('review_support_$post[pid]').innerHTML ? $('review_support_$post[pid]').innerHTML : 0) + ' {lang activity_member_unit} {lang support_reply}'">{lang support_reply} <span id="review_support_$post[pid]">$post[postreview][support]</span></a></li>
+                                    <li><a class="replyadd" href="forum.php?mod=misc&action=postreview&do=support&tid=$_G[tid]&pid=$lou_arr[pid]&hash={FORMHASH}" {if $_G['uid']}onclick="ajaxmenu(this, 3000, 1, 0, '43', '');return false;"{else} onclick="showWindow('login', this.href)"{/if} onmouseover="this.title = ($('review_support_$lou_arr[pid]').innerHTML ? $('review_support_$lou_arr[pid]').innerHTML : 0) + ' {lang activity_member_unit} {lang support_reply}'">{lang support_reply} <span id="review_support_$lou_arr[pid]">$lou_arr[postreview][support]</span></a></li>
                                         <li class="line">|</li>
 
                                 <<!-- li><a class="btn-reply" data-event="reply" data-reply-id="" href="forum.php?mod=post&action=reply&fid= $lou_arr['fid']&tid=$lou_arr['tid']" data-login-check="true">回复</a></li> -->
@@ -297,15 +297,13 @@
                                                            
                                         >赞</a></li> -->
 
-                                        <li>	
-					<a class="replyadd" href="forum.php?mod=misc&action=postreview&do=support&tid=$_G[tid]&pid=$post[pid]&hash={FORMHASH}" {if $_G['uid']}onclick="ajaxmenu(this, 3000, 1, 0, '43', '');return false;"{else} onclick="showWindow('login', this.href)"{/if} onmouseover="this.title = ($('review_support_$post[pid]').innerHTML ? $('review_support_$post[pid]').innerHTML : 0) + ' {lang activity_member_unit} {lang support_reply}'">{lang support_reply} <span id="review_support_$post[pid]">$post[postreview][support]</span></a>
-				
-					</li>
+
+                                        <li><a class="replyadd" href="forum.php?mod=misc&action=postreview&do=support&tid=$_G[tid]&pid=$value[pid]&hash={FORMHASH}" {if $_G['uid']}onclick="ajaxmenu(this, 3000, 1, 0, '43', '');return false;"{else} onclick="showWindow('login', this.href)"{/if} onmouseover="this.title = ($('review_support_$post[pid]').innerHTML ? $('review_support_$post[pid]').innerHTML : 0) + ' {lang activity_member_unit} {lang support_reply}'">{lang support_reply} <span id="review_support_$value[pid]">$post[postreview][support]</span></a></li>
                                         <li class="line">|</li>
 
 
                                     <li>
-                                        <!-- <a class="btn-reply" data-event="reply" data-reply-id="10754" href="forum.php?mod=post&action=reply&fid= $value['fid']&tid=$value['tid']" onclick="showWindow('reply', this.href)">回复</a> -->
+                                        <!-- <a class="btn-reply" data-event="reply" zdata-reply-id="10754" href="forum.php?mod=post&action=reply&fid= $value['fid']&tid=$value['tid']" onclick="showWindow('reply', this.href)">回复</a> -->
                                         <a class="btn-reply" href="forum.php?mod=post&action=reply&fid=$_G[fid]&tid=$_G[tid]&reppost=$post[pid]&extra=$_GET[extra]&page=$page" onclick="showWindow('reply', this.href)">{lang reply}</a>
                                     </li>
                                 </ul>
